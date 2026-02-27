@@ -29,7 +29,7 @@ export default function FinalCTA() {
                 body: JSON.stringify({ name, email, businessName, problem, budget })
             });
 
-            if (budget === "Under ₹50k/mo" || !budget) {
+            if (budget === "No active implementation budget" || !budget) {
                 setShowRejection(true);
             } else {
                 window.location.href = `https://calendly.com/codewithnishant1/ai-growth-strategy-session?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
@@ -267,10 +267,10 @@ export default function FinalCTA() {
                                         style={{ ...inputStyle, appearance: "none" }}
                                     >
                                         <option value="" disabled>Select Investment Range</option>
-                                        <option value="Under ₹50k/mo">Under ₹50k/mo</option>
-                                        <option value="₹50k - ₹1L/mo">₹50k - ₹1L/mo</option>
-                                        <option value="₹1L - ₹5L/mo">₹1L - ₹5L/mo</option>
-                                        <option value="₹5L+/mo">₹5L+/mo</option>
+                                        <option value="No active implementation budget">No active implementation budget</option>
+                                        <option value="₹50k - ₹1L">₹50k - ₹1L</option>
+                                        <option value="₹1L - ₹5L">₹1L - ₹5L</option>
+                                        <option value="₹5L+">₹5L+</option>
                                     </select>
 
                                     <button
