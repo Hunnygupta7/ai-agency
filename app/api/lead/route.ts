@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
     try {
-        const { email } = await req.json();
+        const { name, email, businessName, problem, budget } = await req.json();
 
         if (!email) {
             return NextResponse.json({ error: 'Email is required' }, { status: 400 });
@@ -29,10 +29,10 @@ export async function POST(req: Request) {
 
         const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID,
-            range: 'Sheet1!A:B', // Assuming Sheet1 and Columns A (Date) and B (Email)
+            range: 'Sheet1!A:F', // Columns A(Date), B(Name), C(Email), D(Business), E(Problem), F(Budget)
             valueInputOption: 'USER_ENTERED',
             requestBody: {
-                values: [[new Date().toISOString(), email]],
+                values: [[new Date().toISOString(), name || '', email, businessName || '', problem || '', budget || '']],
             },
         });
 
