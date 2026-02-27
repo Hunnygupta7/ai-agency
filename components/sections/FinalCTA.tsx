@@ -6,11 +6,27 @@ import { ArrowRight } from "lucide-react";
 export default function FinalCTA() {
     const [email, setEmail] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // In real app, submit form to API
-        alert(`Thanks! We'll contact you at ${email}`);
-        setEmail("");
+
+        try {
+            // Send to our API route
+            const response = await fetch('/api/lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+
+            if (response.ok) {
+                // Assuming you use Calendly. The user needs to replace this URL.
+                window.location.href = `https://calendly.com/your-username/30min?email=${encodeURIComponent(email)}`;
+            } else {
+                alert('Failed to save email. Please try again.');
+            }
+        } catch (error) {
+            console.error("Failed to submit", error);
+            alert('An error occurred. Please try again.');
+        }
     };
 
     return (
