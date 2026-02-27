@@ -1,0 +1,260 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
+const stats = [
+    { value: 50, suffix: "+", label: "Businesses Served" },
+    { value: 100, suffix: "+", label: "Projects Delivered" },
+    { value: 5, suffix: "+", label: "Years Experience" },
+    { value: 10, suffix: "+", label: "Industries Covered" },
+];
+
+function CountUp({ target, suffix }: { target: number; suffix: string }) {
+    const [count, setCount] = useState(0);
+    const ref = useRef<HTMLSpanElement>(null);
+    const started = useRef(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !started.current) {
+                    started.current = true;
+                    let start = 0;
+                    const duration = 1800;
+                    const step = (target / duration) * 16;
+                    const timer = setInterval(() => {
+                        start += step;
+                        if (start >= target) {
+                            setCount(target);
+                            clearInterval(timer);
+                        } else {
+                            setCount(Math.floor(start));
+                        }
+                    }, 16);
+                }
+            },
+            { threshold: 0.5 }
+        );
+        if (ref.current) observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, [target]);
+
+    return (
+        <span ref={ref}>
+            {count}
+            {suffix}
+        </span>
+    );
+}
+
+export default function About() {
+    return (
+        <section
+            id="about"
+            className="section-padding"
+            style={{ position: "relative", overflow: "hidden" }}
+        >
+            {/* Blob */}
+            <div
+                style={{
+                    position: "absolute",
+                    top: 0,
+                    right: "10%",
+                    width: "400px",
+                    height: "400px",
+                    borderRadius: "50%",
+                    background: "radial-gradient(circle, rgba(0,255,198,0.07) 0%, transparent 70%)",
+                    pointerEvents: "none",
+                }}
+            />
+
+            <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+                {/* Section Label */}
+                <div
+                    style={{
+                        display: "inline-block",
+                        background: "rgba(180,240,0,0.08)",
+                        border: "1px solid rgba(180,240,0,0.2)",
+                        borderRadius: "50px",
+                        padding: "0.35rem 1rem",
+                        marginBottom: "1rem",
+                    }}
+                >
+                    <span
+                        style={{
+                            fontSize: "0.75rem",
+                            fontWeight: 700,
+                            color: "#B4F000",
+                            letterSpacing: "0.1em",
+                            textTransform: "uppercase",
+                            fontFamily: "var(--font-inter), sans-serif",
+                        }}
+                    >
+                        About Us
+                    </span>
+                </div>
+
+                <h2
+                    style={{
+                        fontFamily: "var(--font-space-grotesk), sans-serif",
+                        fontSize: "clamp(2rem, 4vw, 3rem)",
+                        fontWeight: 800,
+                        color: "#fff",
+                        marginBottom: "1rem",
+                        letterSpacing: "-0.02em",
+                    }}
+                >
+                    The Team Powering{" "}
+                    <span
+                        style={{
+                            background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            backgroundClip: "text",
+                        }}
+                    >
+                        Your AI Future
+                    </span>
+                </h2>
+
+                <p
+                    style={{
+                        fontSize: "1.05rem",
+                        color: "rgba(255,255,255,0.6)",
+                        lineHeight: 1.75,
+                        maxWidth: "640px",
+                        marginBottom: "3.5rem",
+                        fontFamily: "var(--font-inter), sans-serif",
+                    }}
+                >
+                    I'm Nishant — founder and lead AI architect. I built Code With Nishant AI Labs
+                    to help businesses of every size harness the power of artificial intelligence.
+                    We take an AI-first approach to every problem — from automating repetitive tasks
+                    to deploying intelligent voice agents that work 24/7.
+                </p>
+
+                {/* Stats Grid */}
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                        gap: "1.5rem",
+                        marginBottom: "3rem",
+                    }}
+                >
+                    {stats.map((stat) => (
+                        <div
+                            key={stat.label}
+                            className="glass-card"
+                            style={{ padding: "1.75rem", textAlign: "center" }}
+                        >
+                            <div
+                                style={{
+                                    fontFamily: "var(--font-space-grotesk), sans-serif",
+                                    fontWeight: 800,
+                                    fontSize: "2.5rem",
+                                    background: "linear-gradient(135deg, #B4F000 0%, #00FFC6 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                    marginBottom: "0.4rem",
+                                }}
+                            >
+                                <CountUp target={stat.value} suffix={stat.suffix} />
+                            </div>
+                            <div
+                                style={{
+                                    color: "rgba(255,255,255,0.55)",
+                                    fontSize: "0.875rem",
+                                    fontFamily: "var(--font-inter), sans-serif",
+                                }}
+                            >
+                                {stat.label}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Bullet Points */}
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                        gap: "1rem",
+                        marginBottom: "3rem",
+                    }}
+                >
+                    {[
+                        "End-to-end AI system design & deployment",
+                        "AI-first strategy for every solution",
+                        "Expert team across automation, ML, dev",
+                        "Dedicated post-deployment support & optimization",
+                    ].map((item) => (
+                        <div
+                            key={item}
+                            style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}
+                        >
+                            <span
+                                style={{
+                                    flexShrink: 0,
+                                    width: "20px",
+                                    height: "20px",
+                                    borderRadius: "50%",
+                                    background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    fontSize: "0.65rem",
+                                    color: "#071A14",
+                                    fontWeight: 800,
+                                    marginTop: "2px",
+                                }}
+                            >
+                                ✓
+                            </span>
+                            <span
+                                style={{
+                                    fontSize: "0.95rem",
+                                    color: "rgba(255,255,255,0.75)",
+                                    fontFamily: "var(--font-inter), sans-serif",
+                                    lineHeight: 1.5,
+                                }}
+                            >
+                                {item}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+
+                <a
+                    href="#contact"
+                    style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                        color: "#071A14",
+                        padding: "0.85rem 2rem",
+                        borderRadius: "50px",
+                        textDecoration: "none",
+                        fontSize: "0.95rem",
+                        fontWeight: 700,
+                        fontFamily: "var(--font-space-grotesk), sans-serif",
+                        transition: "transform 0.2s, box-shadow 0.2s",
+                        boxShadow: "0 0 25px rgba(180,240,0,0.3)",
+                    }}
+                    onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(180,240,0,0.45)";
+                    }}
+                    onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 25px rgba(180,240,0,0.3)";
+                    }}
+                >
+                    Unlock Smart AI Solutions →
+                </a>
+            </div>
+        </section>
+    );
+}
