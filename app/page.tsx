@@ -8,7 +8,7 @@ import CaseStudies from "@/components/sections/CaseStudies";
 import Testimonials from "@/components/sections/Testimonials";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import ChatBot from "@/components/ChatBot";
 import ParticleBackground from "@/components/ParticleBackground";
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <ChatBot />
     </>
   );
 }
