@@ -88,7 +88,7 @@ export default function About() {
                 >
                     I'm Nishant, founder and lead AI architect at Code With Nishant.
                     to help businesses of every size harness the power of artificial intelligence.
-                    We take an AI-first approach to every problem — from automating repetitive tasks
+                    We take an AI-first approach to every problem. From automating repetitive tasks
                     to deploying intelligent voice agents that work 24/7.
                 </p>
 

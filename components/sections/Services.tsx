@@ -8,7 +8,7 @@ const services: { icon: ReactNode; title: string; description: string; highlight
         icon: <Brain size={28} />,
         title: "Custom AI Development",
         description:
-            "Tailored AI models, pipelines, and intelligent systems built from scratch — designed around your unique business logic.",
+            "Tailored AI models, pipelines, and intelligent systems built from scratch, designed around your unique business logic.",
         highlight: false,
         tag: null,
     },
@@ -16,7 +16,7 @@ const services: { icon: ReactNode; title: string; description: string; highlight
         icon: <Mic size={28} />,
         title: "AI Voice Agents",
         description:
-            "24/7 intelligent voice bots that handle calls, qualify leads, book appointments, and answer queries — fully automated.",
+            "24/7 intelligent voice bots that handle calls, qualify leads, book appointments, and answer queries. Fully automated.",
         highlight: true,
         tag: "Most Popular",
     },
@@ -32,7 +32,7 @@ const services: { icon: ReactNode; title: string; description: string; highlight
         icon: <MessageSquare size={28} />,
         title: "AI Chatbots & Support Systems",
         description:
-            "Deploy AI-powered support agents on your website, WhatsApp, or Slack — trained on your business knowledge.",
+            "Deploy AI-powered support agents on your website, WhatsApp, or Slack, trained on your business knowledge.",
         highlight: false,
         tag: null,
     },

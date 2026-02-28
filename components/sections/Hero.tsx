@@ -144,7 +144,7 @@ export default function Hero() {
                             Generate Revenue
                         </span>
                         <br />
-                        — Not Just Automation.
+                        Not Just Automation.
                     </h1>
 
                     {/* Subheadline */}
