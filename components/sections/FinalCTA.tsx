@@ -10,12 +10,14 @@ export default function FinalCTA() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [businessName, setBusinessName] = useState("");
+    const [website, setWebsite] = useState("");
     const [problem, setProblem] = useState("");
     const [budget, setBudget] = useState("");
 
     // UI state
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showRejection, setShowRejection] = useState(false);
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -23,22 +25,26 @@ export default function FinalCTA() {
 
         try {
             // Send to our API route
+            // We always save the lead data so we don't waste information, even if rejected.
             await fetch('/api/lead', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, businessName, problem, budget })
+                body: JSON.stringify({ name, email, businessName, website, problem, budget })
             });
 
-            if (budget === "No active implementation budget" || !budget) {
+            if (budget === "Just exploring AI options" || !budget) {
                 setShowRejection(true);
             } else {
-                window.location.href = `https://calendly.com/codewithnishant1/ai-growth-strategy-session?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+                setShowSuccessMessage(true);
+                // Artificial delay to show the success message before redirecting
+                setTimeout(() => {
+                    window.location.href = `https://calendly.com/codewithnishant1/ai-growth-strategy-session?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
+                }, 1500);
             }
         } catch (error) {
             console.error("Failed to submit", error);
             alert('An error occurred. Please try again.');
-        } finally {
-            setIsSubmitting(false);
+            setIsSubmitting(false); // only reset on error, on success we redirect
         }
     };
 
@@ -162,7 +168,7 @@ export default function FinalCTA() {
                                 e.currentTarget.style.transform = "scale(1)";
                             }}
                         >
-                            Book Call <ArrowRight size={20} />
+                            Apply for AI Strategy Session <ArrowRight size={20} />
                         </button>
 
                         <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem", display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
@@ -229,70 +235,117 @@ export default function FinalCTA() {
                                 }}>Apply for AI Strategy Session</h3>
 
                                 <form onSubmit={handleSubmit}>
-                                    <input
-                                        type="text"
-                                        placeholder="Your Name"
-                                        required
-                                        value={name}
-                                        onChange={e => setName(e.target.value)}
-                                        style={inputStyle}
-                                    />
-                                    <input
-                                        type="email"
-                                        placeholder="Work Email"
-                                        required
-                                        value={email}
-                                        onChange={e => setEmail(e.target.value)}
-                                        style={inputStyle}
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="Business Name"
-                                        required
-                                        value={businessName}
-                                        onChange={e => setBusinessName(e.target.value)}
-                                        style={inputStyle}
-                                    />
-                                    <textarea
-                                        placeholder="What problem are you trying to solve?"
-                                        required
-                                        value={problem}
-                                        onChange={e => setProblem(e.target.value)}
-                                        style={{ ...inputStyle, minHeight: "100px", resize: "vertical" }}
-                                    />
-                                    <select
-                                        required
-                                        value={budget}
-                                        onChange={e => setBudget(e.target.value)}
-                                        style={{ ...inputStyle, appearance: "none" }}
-                                    >
-                                        <option value="" disabled>Select Investment Range</option>
-                                        <option value="No active implementation budget">No active implementation budget</option>
-                                        <option value="₹50k - ₹1L">₹50k - ₹1L</option>
-                                        <option value="₹1L - ₹5L">₹1L - ₹5L</option>
-                                        <option value="₹5L+">₹5L+</option>
-                                    </select>
+                                    {!showSuccessMessage ? (
+                                        <>
+                                            <input
+                                                type="text"
+                                                placeholder="Your Name"
+                                                required
+                                                value={name}
+                                                onChange={e => setName(e.target.value)}
+                                                style={inputStyle}
+                                            />
+                                            <input
+                                                type="email"
+                                                placeholder="Work Email"
+                                                required
+                                                value={email}
+                                                onChange={e => setEmail(e.target.value)}
+                                                style={inputStyle}
+                                            />
+                                            <input
+                                                type="text"
+                                                placeholder="Business Name"
+                                                required
+                                                value={businessName}
+                                                onChange={e => setBusinessName(e.target.value)}
+                                                style={inputStyle}
+                                            />
+                                            <input
+                                                type="text"
+                                                placeholder="Website / Instagram"
+                                                required
+                                                value={website}
+                                                onChange={e => setWebsite(e.target.value)}
+                                                style={inputStyle}
+                                            />
+                                            <textarea
+                                                placeholder="What problem are you trying to solve?"
+                                                required
+                                                value={problem}
+                                                onChange={e => setProblem(e.target.value)}
+                                                style={{ ...inputStyle, minHeight: "100px", resize: "vertical" }}
+                                            />
+                                            <select
+                                                required
+                                                value={budget}
+                                                onChange={e => setBudget(e.target.value)}
+                                                style={{ ...inputStyle, appearance: "none" }}
+                                            >
+                                                <option value="" disabled>Select Investment Range</option>
+                                                <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000</option>
+                                                <option value="₹1,00,000 – ₹2,50,000">₹1,00,000 – ₹2,50,000</option>
+                                                <option value="₹2,50,000+">₹2,50,000+</option>
+                                                <option value="Just exploring AI options">Just exploring AI options</option>
+                                            </select>
 
-                                    <button
-                                        type="submit"
-                                        disabled={isSubmitting}
-                                        style={{
-                                            width: "100%",
-                                            background: "linear-gradient(135deg, #B4F000, #00FFC6)",
-                                            color: "#071A14",
-                                            border: "none",
-                                            borderRadius: "8px",
-                                            padding: "1rem",
-                                            fontSize: "1.1rem",
-                                            fontWeight: 700,
-                                            fontFamily: "var(--font-space-grotesk), sans-serif",
-                                            cursor: isSubmitting ? "not-allowed" : "pointer",
-                                            opacity: isSubmitting ? 0.7 : 1,
-                                            marginTop: "1rem"
-                                        }}
-                                    >
-                                        {isSubmitting ? "Processing..." : "Continue to Calendar"}
-                                    </button>
+                                            <button
+                                                type="submit"
+                                                disabled={isSubmitting}
+                                                style={{
+                                                    width: "100%",
+                                                    background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                                    color: "#071A14",
+                                                    border: "none",
+                                                    borderRadius: "8px",
+                                                    padding: "1rem",
+                                                    fontSize: "1.1rem",
+                                                    fontWeight: 700,
+                                                    fontFamily: "var(--font-space-grotesk), sans-serif",
+                                                    cursor: isSubmitting ? "not-allowed" : "pointer",
+                                                    opacity: isSubmitting ? 0.7 : 1,
+                                                    marginTop: "1rem"
+                                                }}
+                                            >
+                                                {isSubmitting ? "Processing..." : "Submit Application"}
+                                            </button>
+                                        </>
+                                    ) : (
+                                        <div style={{ textAlign: "center", padding: "2rem 0" }}>
+                                            <div style={{
+                                                width: "60px",
+                                                height: "60px",
+                                                borderRadius: "50%",
+                                                background: "rgba(180, 240, 0, 0.1)",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                                margin: "0 auto 1.5rem auto",
+                                                color: "#B4F000"
+                                            }}>
+                                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                                </svg>
+                                            </div>
+                                            <h3 style={{
+                                                fontFamily: "var(--font-space-grotesk), sans-serif",
+                                                fontSize: "1.5rem",
+                                                color: "#fff",
+                                                marginBottom: "1rem"
+                                            }}>Application in Review</h3>
+                                            <p style={{
+                                                color: "rgba(255,255,255,0.7)",
+                                                lineHeight: 1.6,
+                                                fontFamily: "var(--font-inter), sans-serif",
+                                                fontSize: "1.1rem"
+                                            }}>
+                                                Each application is reviewed to ensure alignment with our implementation criteria.
+                                                <br /><br />
+                                                Your application looks like a potential fit. Please select a time to schedule your AI Strategy Session.
+                                            </p>
+                                        </div>
+                                    )}
                                 </form>
                             </>
                         ) : (
@@ -302,16 +355,16 @@ export default function FinalCTA() {
                                     fontSize: "1.5rem",
                                     color: "#fff",
                                     marginBottom: "1rem"
-                                }}>Thank You</h3>
+                                }}>Application Received</h3>
                                 <p style={{
                                     color: "rgba(255,255,255,0.7)",
                                     lineHeight: 1.6,
                                     fontFamily: "var(--font-inter), sans-serif",
                                     fontSize: "1.1rem"
                                 }}>
-                                    At the moment, strategy sessions are reserved for businesses ready to invest in implementation.
+                                    This strategy session is reserved for businesses ready to implement AI solutions.
                                     <br /><br />
-                                    Feel free to reconnect once budget is allocated.
+                                    Once you're ready to move forward with implementation, feel free to apply again.
                                 </p>
                                 <button
                                     onClick={() => {
@@ -328,7 +381,7 @@ export default function FinalCTA() {
                                         cursor: "pointer"
                                     }}
                                 >
-                                    Close
+                                    Return to Site
                                 </button>
                             </div>
                         )}

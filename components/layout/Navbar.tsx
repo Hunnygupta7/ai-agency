@@ -131,7 +131,7 @@ export default function Navbar() {
                             (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                         }}
                     >
-                        Book a Call
+                        Apply Now
                     </a>
                 </nav>
 
@@ -195,7 +195,7 @@ export default function Navbar() {
                             fontFamily: "var(--font-space-grotesk), sans-serif",
                         }}
                     >
-                        Book a Call
+                        Apply Now
                     </a>
                 </div>
             )}
