@@ -46,8 +46,8 @@ export default function CaseStudies() {
                         <div
                             style={{
                                 display: "inline-block",
-                                background: "rgba(180,240,0,0.08)",
-                                border: "1px solid rgba(180,240,0,0.2)",
+                                background: "rgba(34,197,94,0.08)",
+                                border: "1px solid rgba(34,197,94,0.2)",
                                 borderRadius: "50px",
                                 padding: "0.35rem 1rem",
                                 marginBottom: "1rem",
@@ -57,7 +57,7 @@ export default function CaseStudies() {
                                 style={{
                                     fontSize: "0.75rem",
                                     fontWeight: 700,
-                                    color: "#B4F000",
+                                    color: "#22C55E",
                                     letterSpacing: "0.1em",
                                     textTransform: "uppercase",
                                     fontFamily: "var(--font-inter), sans-serif",
@@ -83,14 +83,14 @@ export default function CaseStudies() {
                     <a
                         href="#contact"
                         style={{
-                            color: "#B4F000",
+                            color: "#22C55E",
                             textDecoration: "none",
                             fontSize: "1rem",
                             fontWeight: 600,
                             display: "flex",
                             alignItems: "center",
                             gap: "0.5rem",
-                            borderBottom: "1px solid rgba(180,240,0,0.3)",
+                            borderBottom: "1px solid rgba(34,197,94,0.3)",
                             paddingBottom: "0.2rem"
                         }}
                     >
@@ -141,7 +141,7 @@ export default function CaseStudies() {
                                     <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginBottom: "0.3rem" }}>
                                         {item.metric1}
                                     </div>
-                                    <div style={{ fontSize: "2rem", fontWeight: 800, color: "#00FFC6", fontFamily: "var(--font-space-grotesk), sans-serif", letterSpacing: "-0.03em" }}>
+                                    <div style={{ fontSize: "2rem", fontWeight: 800, color: "#10B981", fontFamily: "var(--font-space-grotesk), sans-serif", letterSpacing: "-0.03em" }}>
                                         {item.value1}
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@ export default function CaseStudies() {
                                     <div style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.8rem", marginBottom: "0.3rem" }}>
                                         {item.metric2}
                                     </div>
-                                    <div style={{ fontSize: "2rem", fontWeight: 800, color: "#B4F000", fontFamily: "var(--font-space-grotesk), sans-serif", letterSpacing: "-0.03em" }}>
+                                    <div style={{ fontSize: "2rem", fontWeight: 800, color: "#22C55E", fontFamily: "var(--font-space-grotesk), sans-serif", letterSpacing: "-0.03em" }}>
                                         {item.value2}
                                     </div>
                                 </div>

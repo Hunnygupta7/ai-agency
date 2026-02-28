@@ -35,7 +35,7 @@ export default function Navbar() {
                 backdropFilter: scrolled ? "blur(16px)" : "none",
                 WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
                 borderBottom: scrolled
-                    ? "1px solid rgba(180, 240, 0, 0.12)"
+                    ? "1px solid rgba(34, 197, 94, 0.12)"
                     : "1px solid transparent",
             }}
         >
@@ -58,7 +58,7 @@ export default function Navbar() {
                                 width: "36px",
                                 height: "36px",
                                 borderRadius: "10px",
-                                background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                background: "linear-gradient(135deg, #22C55E, #10B981)",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
@@ -79,7 +79,7 @@ export default function Navbar() {
                                 letterSpacing: "-0.01em",
                             }}
                         >
-                            Code With <span style={{ color: "#B4F000" }}>Nishant</span>
+                            Code With <span style={{ color: "#22C55E" }}>Nishant</span>
                         </span>
                     </div>
                 </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
                                 transition: "color 0.2s",
                             }}
                             onMouseEnter={(e) =>
-                                ((e.target as HTMLElement).style.color = "#B4F000")
+                                ((e.target as HTMLElement).style.color = "#22C55E")
                             }
                             onMouseLeave={(e) =>
                                 ((e.target as HTMLElement).style.color = "rgba(255,255,255,0.75)")
@@ -111,7 +111,7 @@ export default function Navbar() {
                     <a
                         href="#contact"
                         style={{
-                            background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                            background: "linear-gradient(135deg, #22C55E, #10B981)",
                             color: "#071A14",
                             padding: "0.55rem 1.4rem",
                             borderRadius: "50px",
@@ -157,7 +157,7 @@ export default function Navbar() {
                     style={{
                         background: "rgba(7, 26, 20, 0.97)",
                         backdropFilter: "blur(16px)",
-                        borderTop: "1px solid rgba(180, 240, 0, 0.12)",
+                        borderTop: "1px solid rgba(34, 197, 94, 0.12)",
                         padding: "1.5rem",
                         display: "flex",
                         flexDirection: "column",
@@ -184,7 +184,7 @@ export default function Navbar() {
                         href="#contact"
                         onClick={() => setMobileOpen(false)}
                         style={{
-                            background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                            background: "linear-gradient(135deg, #22C55E, #10B981)",
                             color: "#071A14",
                             padding: "0.75rem 1.5rem",
                             borderRadius: "50px",

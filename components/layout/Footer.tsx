@@ -17,7 +17,7 @@ export default function Footer() {
                                     width: "36px",
                                     height: "36px",
                                     borderRadius: "10px",
-                                    background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                    background: "linear-gradient(135deg, #22C55E, #10B981)",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
@@ -38,7 +38,7 @@ export default function Footer() {
                                     letterSpacing: "-0.01em",
                                 }}
                             >
-                                Code With <span style={{ color: "#B4F000" }}>Nishant</span>
+                                Code With <span style={{ color: "#22C55E" }}>Nishant</span>
                             </span>
                         </div>
                         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", lineHeight: 1.6, maxWidth: "340px", marginBottom: "2rem" }}>
@@ -69,8 +69,8 @@ export default function Footer() {
                                         transition: "all 0.2s",
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.currentTarget.style.background = "rgba(180,240,0,0.15)";
-                                        e.currentTarget.style.color = "#B4F000";
+                                        e.currentTarget.style.background = "rgba(34,197,94,0.15)";
+                                        e.currentTarget.style.color = "#22C55E";
                                     }}
                                     onMouseLeave={(e) => {
                                         e.currentTarget.style.background = "rgba(255,255,255,0.05)";
@@ -92,7 +92,7 @@ export default function Footer() {
                             {["Voice AI Agents", "Custom AI Development", "Business Automation", "Smart Dashboards"].map(link => (
                                 <li key={link}>
                                     <a href="#services" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}
-                                        onMouseEnter={(e) => e.currentTarget.style.color = "#00FFC6"}
+                                        onMouseEnter={(e) => e.currentTarget.style.color = "#10B981"}
                                         onMouseLeave={(e) => e.currentTarget.style.color = "rgba(255,255,255,0.6)"}
                                     >
                                         {link}
@@ -111,7 +111,7 @@ export default function Footer() {
                             {["About Us", "Our Process", "Case Studies", "Contact"].map(link => (
                                 <li key={link}>
                                     <a href={`#${link.toLowerCase().replace(" ", "")}`} style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}
-                                        onMouseEnter={(e) => e.currentTarget.style.color = "#00FFC6"}
+                                        onMouseEnter={(e) => e.currentTarget.style.color = "#10B981"}
                                         onMouseLeave={(e) => e.currentTarget.style.color = "rgba(255,255,255,0.6)"}
                                     >
                                         {link}

@@ -38,7 +38,7 @@ export default function Hero() {
                     width: "600px",
                     height: "600px",
                     borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(180,240,0,0.12) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)",
                     pointerEvents: "none",
                 }}
             />
@@ -50,7 +50,7 @@ export default function Hero() {
                     width: "500px",
                     height: "500px",
                     borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(0,255,198,0.1) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 70%)",
                     pointerEvents: "none",
                 }}
             />
@@ -88,8 +88,8 @@ export default function Hero() {
                             display: "inline-flex",
                             alignItems: "center",
                             gap: "0.5rem",
-                            background: "rgba(180,240,0,0.1)",
-                            border: "1px solid rgba(180,240,0,0.3)",
+                            background: "rgba(34,197,94,0.1)",
+                            border: "1px solid rgba(34,197,94,0.3)",
                             borderRadius: "50px",
                             padding: "0.4rem 1rem",
                             marginBottom: "1.75rem",
@@ -100,7 +100,7 @@ export default function Hero() {
                                 width: "8px",
                                 height: "8px",
                                 borderRadius: "50%",
-                                background: "#B4F000",
+                                background: "#22C55E",
                                 display: "inline-block",
                                 animation: "pulse-dot 2s ease-in-out infinite",
                             }}
@@ -108,7 +108,7 @@ export default function Hero() {
                         <span
                             style={{
                                 fontSize: "0.8rem",
-                                color: "#B4F000",
+                                color: "#22C55E",
                                 fontWeight: 600,
                                 fontFamily: "var(--font-inter), sans-serif",
                                 letterSpacing: "0.05em",
@@ -135,7 +135,7 @@ export default function Hero() {
                         We Build AI Systems That{" "}
                         <span
                             style={{
-                                background: "linear-gradient(135deg, #B4F000 0%, #00FFC6 60%, #00D9FF 100%)",
+                                background: "linear-gradient(135deg, #22C55E 0%, #10B981 60%, #059669 100%)",
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 backgroundClip: "text",
@@ -170,7 +170,7 @@ export default function Hero() {
                         <a
                             href="#contact"
                             style={{
-                                background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                background: "linear-gradient(135deg, #22C55E, #10B981)",
                                 color: "#071A14",
                                 padding: "0.9rem 2rem",
                                 borderRadius: "50px",
@@ -178,18 +178,18 @@ export default function Hero() {
                                 fontSize: "0.95rem",
                                 fontWeight: 700,
                                 fontFamily: "var(--font-space-grotesk), sans-serif",
-                                boxShadow: "0 0 30px rgba(180, 240, 0, 0.35)",
+                                boxShadow: "0 0 30px rgba(34, 197, 94, 0.35)",
                                 transition: "transform 0.2s, box-shadow 0.2s",
                                 display: "inline-flex",
                                 alignItems: "center",
                             }}
                             onMouseEnter={(e) => {
                                 (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-                                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 45px rgba(180, 240, 0, 0.5)";
+                                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 45px rgba(34, 197, 94, 0.5)";
                             }}
                             onMouseLeave={(e) => {
                                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(180, 240, 0, 0.35)";
+                                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(34, 197, 94, 0.35)";
                             }}
                         >
                             <CalendarCheck size={18} style={{ display: "inline", verticalAlign: "middle", marginRight: "6px" }} />
@@ -211,8 +211,8 @@ export default function Hero() {
                                 display: "inline-block",
                             }}
                             onMouseEnter={(e) => {
-                                (e.currentTarget as HTMLElement).style.borderColor = "rgba(180,240,0,0.5)";
-                                (e.currentTarget as HTMLElement).style.background = "rgba(180,240,0,0.05)";
+                                (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,197,94,0.5)";
+                                (e.currentTarget as HTMLElement).style.background = "rgba(34,197,94,0.05)";
                             }}
                             onMouseLeave={(e) => {
                                 (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.2)";
@@ -244,7 +244,7 @@ export default function Hero() {
                                         fontFamily: "var(--font-space-grotesk), sans-serif",
                                         fontWeight: 800,
                                         fontSize: "1.5rem",
-                                        background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                        background: "linear-gradient(135deg, #22C55E, #10B981)",
                                         WebkitBackgroundClip: "text",
                                         WebkitTextFillColor: "transparent",
                                         backgroundClip: "text",
@@ -283,8 +283,8 @@ export default function Hero() {
                             height: "340px",
                             borderRadius: "50%",
                             background:
-                                "radial-gradient(circle at 35% 35%, rgba(180,240,0,0.25) 0%, rgba(0,255,198,0.15) 40%, transparent 70%)",
-                            border: "1px solid rgba(180,240,0,0.2)",
+                                "radial-gradient(circle at 35% 35%, rgba(34,197,94,0.25) 0%, rgba(16,185,129,0.15) 40%, transparent 70%)",
+                            border: "1px solid rgba(34,197,94,0.2)",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -298,8 +298,8 @@ export default function Hero() {
                                 height: "220px",
                                 borderRadius: "50%",
                                 background:
-                                    "radial-gradient(circle at 40% 40%, rgba(0,255,198,0.3) 0%, rgba(0,217,255,0.15) 50%, transparent 70%)",
-                                border: "1px solid rgba(0,255,198,0.25)",
+                                    "radial-gradient(circle at 40% 40%, rgba(16,185,129,0.3) 0%, rgba(0,217,255,0.15) 50%, transparent 70%)",
+                                border: "1px solid rgba(16,185,129,0.25)",
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
@@ -310,24 +310,24 @@ export default function Hero() {
                                     width: "120px",
                                     height: "120px",
                                     borderRadius: "50%",
-                                    background: "linear-gradient(135deg, rgba(180,240,0,0.4), rgba(0,255,198,0.4))",
+                                    background: "linear-gradient(135deg, rgba(34,197,94,0.4), rgba(16,185,129,0.4))",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
                                     fontSize: "3rem",
-                                    boxShadow: "0 0 40px rgba(180,240,0,0.4), 0 0 80px rgba(0,255,198,0.2)",
+                                    boxShadow: "0 0 40px rgba(34,197,94,0.4), 0 0 80px rgba(16,185,129,0.2)",
                                 }}
                             >
-                                <Bot size={48} color="#B4F000" />
+                                <Bot size={48} color="#22C55E" />
                             </div>
                         </div>
 
                         {/* Orbiting elements */}
                         {[
-                            { icon: <Zap size={20} color="#B4F000" />, top: "-20px", left: "140px", color: "#B4F000" },
-                            { icon: <Brain size={20} color="#00FFC6" />, top: "270px", left: "60px", color: "#00FFC6" },
-                            { icon: <Link size={20} color="#00D9FF" />, top: "130px", left: "-25px", color: "#00D9FF" },
-                            { icon: <BarChart3 size={20} color="#B4F000" />, top: "20px", right: "-5px", color: "#B4F000" },
+                            { icon: <Zap size={20} color="#22C55E" />, top: "-20px", left: "140px", color: "#22C55E" },
+                            { icon: <Brain size={20} color="#10B981" />, top: "270px", left: "60px", color: "#10B981" },
+                            { icon: <Link size={20} color="#059669" />, top: "130px", left: "-25px", color: "#059669" },
+                            { icon: <BarChart3 size={20} color="#22C55E" />, top: "20px", right: "-5px", color: "#22C55E" },
                         ].map((item, i) => (
                             <div
                                 key={i}
@@ -364,7 +364,7 @@ export default function Hero() {
                             left: "-10px",
                             background: "rgba(255,255,255,0.05)",
                             backdropFilter: "blur(12px)",
-                            border: "1px solid rgba(180,240,0,0.2)",
+                            border: "1px solid rgba(34,197,94,0.2)",
                             borderRadius: "12px",
                             padding: "0.6rem 1rem",
                             display: "flex",
@@ -372,8 +372,8 @@ export default function Hero() {
                             gap: "0.5rem",
                         }}
                     >
-                        <Mic size={18} color="#B4F000" />
-                        <span style={{ color: "#B4F000", fontSize: "0.8rem", fontWeight: 600, fontFamily: "var(--font-inter), sans-serif" }}>
+                        <Mic size={18} color="#22C55E" />
+                        <span style={{ color: "#22C55E", fontSize: "0.8rem", fontWeight: 600, fontFamily: "var(--font-inter), sans-serif" }}>
                             Voice AI Agents
                         </span>
                     </div>
@@ -384,12 +384,12 @@ export default function Hero() {
                             right: "-20px",
                             background: "rgba(255,255,255,0.05)",
                             backdropFilter: "blur(12px)",
-                            border: "1px solid rgba(0,255,198,0.2)",
+                            border: "1px solid rgba(16,185,129,0.2)",
                             borderRadius: "12px",
                             padding: "0.6rem 1rem",
                         }}
                     >
-                        <span style={{ color: "#00FFC6", fontSize: "0.8rem", fontWeight: 600, fontFamily: "var(--font-inter), sans-serif" }}>
+                        <span style={{ color: "#10B981", fontSize: "0.8rem", fontWeight: 600, fontFamily: "var(--font-inter), sans-serif" }}>
                             <Bot size={16} style={{ display: "inline", verticalAlign: "middle", marginRight: "4px" }} /> Automation
                         </span>
                     </div>

@@ -25,7 +25,7 @@ export default function Tools() {
                             style={{
                                 fontSize: "0.75rem",
                                 fontWeight: 700,
-                                color: "#00D9FF",
+                                color: "#059669",
                                 letterSpacing: "0.1em",
                                 textTransform: "uppercase",
                                 fontFamily: "var(--font-inter), sans-serif",
@@ -47,7 +47,7 @@ export default function Tools() {
                         The Tech That Powers{" "}
                         <span
                             style={{
-                                background: "linear-gradient(135deg, #00FFC6, #00D9FF)",
+                                background: "linear-gradient(135deg, #10B981, #059669)",
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 backgroundClip: "text",
@@ -97,7 +97,7 @@ export default function Tools() {
                                 right: 0,
                                 width: "300px",
                                 height: "300px",
-                                background: "radial-gradient(circle, rgba(0,255,198,0.08) 0%, transparent 70%)",
+                                background: "radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%)",
                                 filter: "blur(40px)",
                                 borderRadius: "50%",
                             }}
@@ -109,11 +109,11 @@ export default function Tools() {
                                     width: "48px",
                                     height: "48px",
                                     borderRadius: "12px",
-                                    background: "rgba(0,255,198,0.1)",
+                                    background: "rgba(16,185,129,0.1)",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    color: "#00FFC6",
+                                    color: "#10B981",
                                 }}
                             >
                                 <BarChart3 size={24} />
@@ -156,7 +156,7 @@ export default function Tools() {
                                     style={{
                                         flex: 1,
                                         background: i === 7
-                                            ? "linear-gradient(180deg, #00FFC6 0%, rgba(0,255,198,0.2) 100%)"
+                                            ? "linear-gradient(180deg, #10B981 0%, rgba(16,185,129,0.2) 100%)"
                                             : "linear-gradient(180deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.02) 100%)",
                                         height: `${h}%`,
                                         borderRadius: "4px 4px 0 0",
@@ -184,11 +184,11 @@ export default function Tools() {
                                     width: "48px",
                                     height: "48px",
                                     borderRadius: "12px",
-                                    background: "rgba(180,240,0,0.1)",
+                                    background: "rgba(34,197,94,0.1)",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    color: "#B4F000",
+                                    color: "#22C55E",
                                 }}
                             >
                                 <Workflow size={24} />
@@ -236,19 +236,19 @@ export default function Tools() {
                             icon: <Zap size={24} />,
                             title: "Lightning Fast API",
                             desc: "Sub-200ms response times for real-time voice and chat interactions.",
-                            color: "#00D9FF"
+                            color: "#059669"
                         },
                         {
                             icon: <Fingerprint size={24} />,
                             title: "Custom Workflows",
                             desc: "Logic tailored specifically to your exact sales or support process.",
-                            color: "#B4F000"
+                            color: "#22C55E"
                         },
                         {
                             icon: <CheckCircle2 size={24} />,
                             title: "Enterprise Security",
                             desc: "End-to-end encryption for all data processed by your AI models.",
-                            color: "#00FFC6"
+                            color: "#10B981"
                         }
                     ].map((block, i) => (
                         <div

@@ -109,8 +109,8 @@ export default function Testimonials() {
                     <div
                         style={{
                             display: "inline-block",
-                            background: "rgba(180,240,0,0.08)",
-                            border: "1px solid rgba(180,240,0,0.2)",
+                            background: "rgba(34,197,94,0.08)",
+                            border: "1px solid rgba(34,197,94,0.2)",
                             borderRadius: "50px",
                             padding: "0.35rem 1rem",
                             marginBottom: "1rem",
@@ -120,7 +120,7 @@ export default function Testimonials() {
                             style={{
                                 fontSize: "0.75rem",
                                 fontWeight: 700,
-                                color: "#B4F000",
+                                color: "#22C55E",
                                 letterSpacing: "0.1em",
                                 textTransform: "uppercase",
                                 fontFamily: "var(--font-inter), sans-serif",
@@ -184,13 +184,13 @@ export default function Testimonials() {
                             flexDirection: "column",
                             flexShrink: 0,
                             transition: "border-color 0.3s",
-                            borderColor: isPaused ? "rgba(180,240,0,0.25)" : undefined,
+                            borderColor: isPaused ? "rgba(34,197,94,0.25)" : undefined,
                         }}
                     >
                         {/* Stars */}
-                        <div style={{ display: "flex", gap: "0.2rem", color: "#B4F000", marginBottom: "1.25rem" }}>
+                        <div style={{ display: "flex", gap: "0.2rem", color: "#22C55E", marginBottom: "1.25rem" }}>
                             {[...Array(5)].map((_, i) => (
-                                <Star key={i} size={16} fill="#B4F000" />
+                                <Star key={i} size={16} fill="#22C55E" />
                             ))}
                         </div>
 
@@ -216,15 +216,15 @@ export default function Testimonials() {
                                     width: "44px",
                                     height: "44px",
                                     borderRadius: "50%",
-                                    background: "linear-gradient(135deg, rgba(180,240,0,0.2), rgba(0,255,198,0.15))",
+                                    background: "linear-gradient(135deg, rgba(34,197,94,0.2), rgba(16,185,129,0.15))",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    color: "#B4F000",
+                                    color: "#22C55E",
                                     fontWeight: 700,
                                     fontSize: "1.1rem",
                                     fontFamily: "var(--font-space-grotesk), sans-serif",
-                                    border: "1px solid rgba(180,240,0,0.2)",
+                                    border: "1px solid rgba(34,197,94,0.2)",
                                 }}
                             >
                                 {t.name.charAt(0)}

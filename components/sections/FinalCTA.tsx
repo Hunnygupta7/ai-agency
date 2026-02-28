@@ -68,7 +68,7 @@ export default function FinalCTA() {
                 <div
                     style={{
                         background: "linear-gradient(135deg, rgba(7,26,20,0.8) 0%, rgba(15,61,46,0.9) 100%)",
-                        border: "1px solid rgba(180,240,0,0.2)",
+                        border: "1px solid rgba(34,197,94,0.2)",
                         borderRadius: "32px",
                         padding: "5rem 2rem",
                         textAlign: "center",
@@ -86,7 +86,7 @@ export default function FinalCTA() {
                             width: "600px",
                             height: "600px",
                             borderRadius: "50%",
-                            background: "radial-gradient(circle, rgba(180,240,0,0.15) 0%, transparent 60%)",
+                            background: "radial-gradient(circle, rgba(34,197,94,0.15) 0%, transparent 60%)",
                             pointerEvents: "none",
                         }}
                     />
@@ -98,7 +98,7 @@ export default function FinalCTA() {
                             width: "500px",
                             height: "500px",
                             borderRadius: "50%",
-                            background: "radial-gradient(circle, rgba(0,255,198,0.1) 0%, transparent 60%)",
+                            background: "radial-gradient(circle, rgba(16,185,129,0.1) 0%, transparent 60%)",
                             pointerEvents: "none",
                         }}
                     />
@@ -118,7 +118,7 @@ export default function FinalCTA() {
                             Limited Strategy Sessions <br />
                             <span
                                 style={{
-                                    background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                    background: "linear-gradient(135deg, #22C55E, #10B981)",
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent",
                                     backgroundClip: "text",
@@ -162,7 +162,7 @@ export default function FinalCTA() {
                                 "You are prepared to invest in execution",
                             ].map((item) => (
                                 <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
-                                    <Check size={16} color="#B4F000" strokeWidth={3} />
+                                    <Check size={16} color="#22C55E" strokeWidth={3} />
                                     <span style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-inter), sans-serif" }}>
                                         {item}
                                     </span>
@@ -173,7 +173,7 @@ export default function FinalCTA() {
                         <button
                             onClick={() => setIsModalOpen(true)}
                             style={{
-                                background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                background: "linear-gradient(135deg, #22C55E, #10B981)",
                                 color: "#071A14",
                                 border: "none",
                                 borderRadius: "50px",
@@ -232,7 +232,7 @@ export default function FinalCTA() {
                 }}>
                     <div style={{
                         background: "#071A14",
-                        border: "1px solid rgba(180,240,0,0.2)",
+                        border: "1px solid rgba(34,197,94,0.2)",
                         borderRadius: "24px",
                         width: "100%",
                         maxWidth: "500px",
@@ -326,7 +326,7 @@ export default function FinalCTA() {
                                                 disabled={isSubmitting}
                                                 style={{
                                                     width: "100%",
-                                                    background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                                    background: "linear-gradient(135deg, #22C55E, #10B981)",
                                                     color: "#071A14",
                                                     border: "none",
                                                     borderRadius: "8px",
@@ -348,12 +348,12 @@ export default function FinalCTA() {
                                                 width: "60px",
                                                 height: "60px",
                                                 borderRadius: "50%",
-                                                background: "rgba(180, 240, 0, 0.1)",
+                                                background: "rgba(34, 197, 94, 0.1)",
                                                 display: "flex",
                                                 alignItems: "center",
                                                 justifyContent: "center",
                                                 margin: "0 auto 1.5rem auto",
-                                                color: "#B4F000"
+                                                color: "#22C55E"
                                             }}>
                                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>

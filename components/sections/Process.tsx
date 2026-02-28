@@ -39,8 +39,8 @@ export default function Process() {
                         <div
                             style={{
                                 display: "inline-block",
-                                background: "rgba(180,240,0,0.08)",
-                                border: "1px solid rgba(180,240,0,0.2)",
+                                background: "rgba(34,197,94,0.08)",
+                                border: "1px solid rgba(34,197,94,0.2)",
                                 borderRadius: "50px",
                                 padding: "0.35rem 1rem",
                                 marginBottom: "1rem",
@@ -50,7 +50,7 @@ export default function Process() {
                                 style={{
                                     fontSize: "0.75rem",
                                     fontWeight: 700,
-                                    color: "#B4F000",
+                                    color: "#22C55E",
                                     letterSpacing: "0.1em",
                                     textTransform: "uppercase",
                                     fontFamily: "var(--font-inter), sans-serif",
@@ -73,7 +73,7 @@ export default function Process() {
                             From Idea To <br />
                             <span
                                 style={{
-                                    background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                    background: "linear-gradient(135deg, #22C55E, #10B981)",
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent",
                                     backgroundClip: "text",
@@ -112,8 +112,8 @@ export default function Process() {
                                 display: "inline-block",
                             }}
                             onMouseEnter={(e) => {
-                                (e.currentTarget as HTMLElement).style.borderColor = "rgba(180,240,0,0.5)";
-                                (e.currentTarget as HTMLElement).style.background = "rgba(180,240,0,0.05)";
+                                (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,197,94,0.5)";
+                                (e.currentTarget as HTMLElement).style.background = "rgba(34,197,94,0.05)";
                             }}
                             onMouseLeave={(e) => {
                                 (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.2)";
@@ -134,7 +134,7 @@ export default function Process() {
                                 top: "24px",
                                 bottom: "24px",
                                 width: "2px",
-                                background: "linear-gradient(180deg, #B4F000 0%, rgba(180,240,0,0.1) 100%)",
+                                background: "linear-gradient(180deg, #22C55E 0%, rgba(34,197,94,0.1) 100%)",
                                 zIndex: 0
                             }}
                         />
@@ -149,16 +149,16 @@ export default function Process() {
                                             height: "48px",
                                             borderRadius: "50%",
                                             background: "#071A14",
-                                            border: "2px solid #B4F000",
+                                            border: "2px solid #22C55E",
                                             display: "flex",
                                             alignItems: "center",
                                             justifyContent: "center",
                                             fontSize: "1.1rem",
                                             fontWeight: 700,
-                                            color: "#B4F000",
+                                            color: "#22C55E",
                                             fontFamily: "var(--font-space-grotesk), sans-serif",
                                             flexShrink: 0,
-                                            boxShadow: "0 0 20px rgba(180,240,0,0.2)",
+                                            boxShadow: "0 0 20px rgba(34,197,94,0.2)",
                                         }}
                                     >
                                         {step.num}

@@ -69,7 +69,7 @@ export default function Services() {
                     width: "350px",
                     height: "350px",
                     borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(180,240,0,0.06) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%)",
                     pointerEvents: "none",
                 }}
             />
@@ -79,8 +79,8 @@ export default function Services() {
                     <div
                         style={{
                             display: "inline-block",
-                            background: "rgba(180,240,0,0.08)",
-                            border: "1px solid rgba(180,240,0,0.2)",
+                            background: "rgba(34,197,94,0.08)",
+                            border: "1px solid rgba(34,197,94,0.2)",
                             borderRadius: "50px",
                             padding: "0.35rem 1rem",
                             marginBottom: "1rem",
@@ -90,7 +90,7 @@ export default function Services() {
                             style={{
                                 fontSize: "0.75rem",
                                 fontWeight: 700,
-                                color: "#B4F000",
+                                color: "#22C55E",
                                 letterSpacing: "0.1em",
                                 textTransform: "uppercase",
                                 fontFamily: "var(--font-inter), sans-serif",
@@ -112,7 +112,7 @@ export default function Services() {
                         AI-Powered Services That{" "}
                         <span
                             style={{
-                                background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                background: "linear-gradient(135deg, #22C55E, #10B981)",
                                 WebkitBackgroundClip: "text",
                                 WebkitTextFillColor: "transparent",
                                 backgroundClip: "text",
@@ -153,11 +153,11 @@ export default function Services() {
                                 position: "relative",
                                 transition: "all 0.3s ease",
                                 background: service.highlight
-                                    ? "rgba(180,240,0,0.07)"
+                                    ? "rgba(34,197,94,0.07)"
                                     : "rgba(255,255,255,0.04)",
                                 border: service.highlight
-                                    ? "1px solid rgba(180,240,0,0.35)"
-                                    : "1px solid rgba(180,240,0,0.12)",
+                                    ? "1px solid rgba(34,197,94,0.35)"
+                                    : "1px solid rgba(34,197,94,0.12)",
                             }}
                         >
                             {/* Popular tag */}
@@ -167,7 +167,7 @@ export default function Services() {
                                         position: "absolute",
                                         top: "1.25rem",
                                         right: "1.25rem",
-                                        background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                        background: "linear-gradient(135deg, #22C55E, #10B981)",
                                         color: "#071A14",
                                         fontSize: "0.7rem",
                                         fontWeight: 700,
@@ -187,7 +187,7 @@ export default function Services() {
                                     height: "56px",
                                     borderRadius: "16px",
                                     background: service.highlight
-                                        ? "linear-gradient(135deg, rgba(180,240,0,0.25), rgba(0,255,198,0.15))"
+                                        ? "linear-gradient(135deg, rgba(34,197,94,0.25), rgba(16,185,129,0.15))"
                                         : "rgba(255,255,255,0.06)",
                                     display: "flex",
                                     alignItems: "center",
@@ -195,9 +195,9 @@ export default function Services() {
                                     fontSize: "1.6rem",
                                     marginBottom: "1.25rem",
                                     border: service.highlight
-                                        ? "1px solid rgba(180,240,0,0.3)"
+                                        ? "1px solid rgba(34,197,94,0.3)"
                                         : "1px solid rgba(255,255,255,0.08)",
-                                    color: service.highlight ? "#B4F000" : "#00FFC6",
+                                    color: service.highlight ? "#22C55E" : "#10B981",
                                 }}
                             >
                                 {service.icon}
@@ -208,7 +208,7 @@ export default function Services() {
                                     fontFamily: "var(--font-space-grotesk), sans-serif",
                                     fontWeight: 700,
                                     fontSize: "1.2rem",
-                                    color: service.highlight ? "#B4F000" : "#fff",
+                                    color: service.highlight ? "#22C55E" : "#fff",
                                     marginBottom: "0.75rem",
                                     letterSpacing: "-0.01em",
                                 }}
@@ -234,7 +234,7 @@ export default function Services() {
                                     display: "inline-flex",
                                     alignItems: "center",
                                     gap: "0.4rem",
-                                    color: service.highlight ? "#B4F000" : "#00FFC6",
+                                    color: service.highlight ? "#22C55E" : "#10B981",
                                     textDecoration: "none",
                                     fontSize: "0.85rem",
                                     fontWeight: 600,

@@ -22,7 +22,7 @@ export default function About() {
                     width: "400px",
                     height: "400px",
                     borderRadius: "50%",
-                    background: "radial-gradient(circle, rgba(0,255,198,0.07) 0%, transparent 70%)",
+                    background: "radial-gradient(circle, rgba(16,185,129,0.07) 0%, transparent 70%)",
                     pointerEvents: "none",
                 }}
             />
@@ -32,8 +32,8 @@ export default function About() {
                 <div
                     style={{
                         display: "inline-block",
-                        background: "rgba(180,240,0,0.08)",
-                        border: "1px solid rgba(180,240,0,0.2)",
+                        background: "rgba(34,197,94,0.08)",
+                        border: "1px solid rgba(34,197,94,0.2)",
                         borderRadius: "50px",
                         padding: "0.35rem 1rem",
                         marginBottom: "1rem",
@@ -43,7 +43,7 @@ export default function About() {
                         style={{
                             fontSize: "0.75rem",
                             fontWeight: 700,
-                            color: "#B4F000",
+                            color: "#22C55E",
                             letterSpacing: "0.1em",
                             textTransform: "uppercase",
                             fontFamily: "var(--font-inter), sans-serif",
@@ -66,7 +66,7 @@ export default function About() {
                     The Team Powering{" "}
                     <span
                         style={{
-                            background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                            background: "linear-gradient(135deg, #22C55E, #10B981)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                             backgroundClip: "text",
@@ -119,7 +119,7 @@ export default function About() {
                                     width: "20px",
                                     height: "20px",
                                     borderRadius: "50%",
-                                    background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                                    background: "linear-gradient(135deg, #22C55E, #10B981)",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
@@ -151,7 +151,7 @@ export default function About() {
                         display: "inline-flex",
                         alignItems: "center",
                         gap: "0.5rem",
-                        background: "linear-gradient(135deg, #B4F000, #00FFC6)",
+                        background: "linear-gradient(135deg, #22C55E, #10B981)",
                         color: "#071A14",
                         padding: "0.85rem 2rem",
                         borderRadius: "50px",
@@ -160,15 +160,15 @@ export default function About() {
                         fontWeight: 700,
                         fontFamily: "var(--font-space-grotesk), sans-serif",
                         transition: "transform 0.2s, box-shadow 0.2s",
-                        boxShadow: "0 0 25px rgba(180,240,0,0.3)",
+                        boxShadow: "0 0 25px rgba(34,197,94,0.3)",
                     }}
                     onMouseEnter={(e) => {
                         (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(180,240,0,0.45)";
+                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 40px rgba(34,197,94,0.45)";
                     }}
                     onMouseLeave={(e) => {
                         (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 25px rgba(180,240,0,0.3)";
+                        (e.currentTarget as HTMLElement).style.boxShadow = "0 0 25px rgba(34,197,94,0.3)";
                     }}
                 >
                     See How We Can Help →
