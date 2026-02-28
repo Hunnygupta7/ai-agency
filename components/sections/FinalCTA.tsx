@@ -36,15 +36,12 @@ export default function FinalCTA() {
                 setShowRejection(true);
             } else {
                 setShowSuccessMessage(true);
-                // Artificial delay to show the success message before redirecting
-                setTimeout(() => {
-                    window.location.href = `https://calendly.com/codewithnishant1/ai-growth-strategy-session?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`;
-                }, 1500);
+                setIsSubmitting(false);
             }
         } catch (error) {
             console.error("Failed to submit", error);
             alert('An error occurred. Please try again.');
-            setIsSubmitting(false); // only reset on error, on success we redirect
+            setIsSubmitting(false);
         }
     };
 
