@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, X, Check } from "lucide-react";
 
 export default function FinalCTA() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -115,7 +115,7 @@ export default function FinalCTA() {
                                 marginBottom: "1.5rem",
                             }}
                         >
-                            Ready To Power Up <br />
+                            Limited Strategy Sessions <br />
                             <span
                                 style={{
                                     background: "linear-gradient(135deg, #B4F000, #00FFC6)",
@@ -124,22 +124,51 @@ export default function FinalCTA() {
                                     backgroundClip: "text",
                                 }}
                             >
-                                With AI?
+                                Available Each Week
                             </span>
                         </h2>
 
                         <p
                             style={{
-                                fontSize: "1.2rem",
-                                color: "rgba(255,255,255,0.7)",
+                                fontSize: "1.05rem",
+                                color: "rgba(255,255,255,0.6)",
                                 maxWidth: "500px",
-                                margin: "0 auto 3rem auto",
+                                margin: "0 auto 2rem auto",
                                 fontFamily: "var(--font-inter), sans-serif",
                                 lineHeight: 1.6,
                             }}
                         >
-                            Let's build intelligent systems that work while you sleep. Free strategy audit included.
+                            Let&apos;s build intelligent systems that work while you sleep.
                         </p>
+
+                        {/* Qualification Signal */}
+                        <div style={{
+                            maxWidth: "420px",
+                            margin: "0 auto 2.5rem auto",
+                            textAlign: "left",
+                        }}>
+                            <p style={{
+                                fontSize: "0.9rem",
+                                color: "rgba(255,255,255,0.8)",
+                                fontWeight: 600,
+                                fontFamily: "var(--font-inter), sans-serif",
+                                marginBottom: "0.75rem",
+                            }}>
+                                This session is ideal if:
+                            </p>
+                            {[
+                                "You operate a revenue-generating business",
+                                "You want implementation within 30–60 days",
+                                "You are prepared to invest in execution",
+                            ].map((item) => (
+                                <div key={item} style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                                    <Check size={16} color="#B4F000" strokeWidth={3} />
+                                    <span style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.65)", fontFamily: "var(--font-inter), sans-serif" }}>
+                                        {item}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
 
                         <button
                             onClick={() => setIsModalOpen(true)}
@@ -157,7 +186,7 @@ export default function FinalCTA() {
                                 alignItems: "center",
                                 gap: "0.5rem",
                                 transition: "opacity 0.2s, transform 0.2s",
-                                margin: "0 auto 2rem auto"
+                                margin: "0 auto 1.5rem auto"
                             }}
                             onMouseEnter={(e) => {
                                 e.currentTarget.style.opacity = "0.9";
@@ -171,11 +200,14 @@ export default function FinalCTA() {
                             Apply for AI Strategy Session <ArrowRight size={20} />
                         </button>
 
-                        <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem", display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
-                            <span>✓ No credit card required</span>
-                            <span>✓ 30-min discovery call</span>
-                            <span>✓ Custom roadmap</span>
-                        </div>
+                        <p style={{
+                            fontSize: "0.8rem",
+                            color: "rgba(255,255,255,0.35)",
+                            fontFamily: "var(--font-inter), sans-serif",
+                            fontStyle: "italic",
+                        }}>
+                            Designed for businesses prepared to invest ₹50,000+ in AI implementation.
+                        </p>
 
                     </div>
                 </div>
@@ -342,7 +374,7 @@ export default function FinalCTA() {
                                             }}>
                                                 Each application is reviewed to ensure alignment with our implementation criteria.
                                                 <br /><br />
-                                                Your application looks like a potential fit. Please select a time to schedule your AI Strategy Session.
+                                                We&apos;ll be in touch within 24–48 hours if your business is a fit.
                                             </p>
                                         </div>
                                     )}

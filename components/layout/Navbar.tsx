@@ -131,7 +131,7 @@ export default function Navbar() {
                             (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                         }}
                     >
-                        Apply Now
+                        Get Started
                     </a>
                 </nav>
 
@@ -195,7 +195,7 @@ export default function Navbar() {
                             fontFamily: "var(--font-space-grotesk), sans-serif",
                         }}
                     >
-                        Apply Now
+                        Get Started
                     </a>
                 </div>
             )}

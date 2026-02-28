@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
+import { Bot, Zap, Brain, Link, BarChart3, Mic, CalendarCheck } from "lucide-react";
 export default function Hero() {
     const headlineRef = useRef<HTMLHeadingElement>(null);
 
@@ -132,7 +132,7 @@ export default function Hero() {
                             marginBottom: "1.5rem",
                         }}
                     >
-                        AI-Powered{" "}
+                        We Build AI Systems That{" "}
                         <span
                             style={{
                                 background: "linear-gradient(135deg, #B4F000 0%, #00FFC6 60%, #00D9FF 100%)",
@@ -141,10 +141,10 @@ export default function Hero() {
                                 backgroundClip: "text",
                             }}
                         >
-                            Growth Systems
+                            Generate Revenue
                         </span>
                         <br />
-                        For Smarter Businesses
+                        — Not Just Automation.
                     </h1>
 
                     {/* Subheadline */}
@@ -158,8 +158,8 @@ export default function Hero() {
                             maxWidth: "520px",
                         }}
                     >
-                        We build intelligent automation, voice AI agents, and AI-driven
-                        digital systems that scale your business.{" "}
+                        From AI voice agents to custom automation pipelines, built for
+                        businesses ready to scale.{" "}
                         <strong style={{ color: "rgba(255,255,255,0.9)" }}>
                             From idea to intelligent execution.
                         </strong>
@@ -180,7 +180,8 @@ export default function Hero() {
                                 fontFamily: "var(--font-space-grotesk), sans-serif",
                                 boxShadow: "0 0 30px rgba(180, 240, 0, 0.35)",
                                 transition: "transform 0.2s, box-shadow 0.2s",
-                                display: "inline-block",
+                                display: "inline-flex",
+                                alignItems: "center",
                             }}
                             onMouseEnter={(e) => {
                                 (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
@@ -191,7 +192,8 @@ export default function Hero() {
                                 (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(180, 240, 0, 0.35)";
                             }}
                         >
-                            📅 Book Free Strategy Call
+                            <CalendarCheck size={18} style={{ display: "inline", verticalAlign: "middle", marginRight: "6px" }} />
+                            Apply for AI Strategy Session
                         </a>
                         <a
                             href="#services"
@@ -316,16 +318,16 @@ export default function Hero() {
                                     boxShadow: "0 0 40px rgba(180,240,0,0.4), 0 0 80px rgba(0,255,198,0.2)",
                                 }}
                             >
-                                🤖
+                                <Bot size={48} color="#B4F000" />
                             </div>
                         </div>
 
                         {/* Orbiting elements */}
                         {[
-                            { icon: "⚡", top: "-20px", left: "140px", color: "#B4F000" },
-                            { icon: "🧠", top: "270px", left: "60px", color: "#00FFC6" },
-                            { icon: "🔗", top: "130px", left: "-25px", color: "#00D9FF" },
-                            { icon: "📊", top: "20px", right: "-5px", color: "#B4F000" },
+                            { icon: <Zap size={20} color="#B4F000" />, top: "-20px", left: "140px", color: "#B4F000" },
+                            { icon: <Brain size={20} color="#00FFC6" />, top: "270px", left: "60px", color: "#00FFC6" },
+                            { icon: <Link size={20} color="#00D9FF" />, top: "130px", left: "-25px", color: "#00D9FF" },
+                            { icon: <BarChart3 size={20} color="#B4F000" />, top: "20px", right: "-5px", color: "#B4F000" },
                         ].map((item, i) => (
                             <div
                                 key={i}
@@ -370,7 +372,7 @@ export default function Hero() {
                             gap: "0.5rem",
                         }}
                     >
-                        <span style={{ fontSize: "1rem" }}>🎙️</span>
+                        <Mic size={18} color="#B4F000" />
                         <span style={{ color: "#B4F000", fontSize: "0.8rem", fontWeight: 600, fontFamily: "var(--font-inter), sans-serif" }}>
                             Voice AI Agents
                         </span>
@@ -388,7 +390,7 @@ export default function Hero() {
                         }}
                     >
                         <span style={{ color: "#00FFC6", fontSize: "0.8rem", fontWeight: 600, fontFamily: "var(--font-inter), sans-serif" }}>
-                            🤖 Automation
+                            <Bot size={16} style={{ display: "inline", verticalAlign: "middle", marginRight: "4px" }} /> Automation
                         </span>
                     </div>
                 </div>

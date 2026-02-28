@@ -1,6 +1,6 @@
 "use client";
 
-import { Linkedin, Twitter, Github, Mail } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Youtube, Mail } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -38,7 +38,7 @@ export default function Footer() {
                                     letterSpacing: "-0.01em",
                                 }}
                             >
-                                Code With <span style={{ color: "#B4F000" }}>Nishant</span> AI Labs
+                                Code With <span style={{ color: "#B4F000" }}>Nishant</span>
                             </span>
                         </div>
                         <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.95rem", lineHeight: 1.6, maxWidth: "340px", marginBottom: "2rem" }}>
@@ -46,14 +46,17 @@ export default function Footer() {
                         </p>
                         <div style={{ display: "flex", gap: "1rem" }}>
                             {[
-                                { icon: <Twitter size={20} />, href: "#" },
-                                { icon: <Linkedin size={20} />, href: "#" },
-                                { icon: <Github size={20} />, href: "#" },
-                                { icon: <Mail size={20} />, href: "mailto:hello@example.com" },
+                                { icon: <Twitter size={20} />, href: "https://x.com/NishKnows001" },
+                                { icon: <Youtube size={20} />, href: "https://www.youtube.com/@codewithnishant001" },
+                                { icon: <Instagram size={20} />, href: "https://www.instagram.com/codewithnishant/" },
+                                { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/nishantgupta-codewithnishant/" },
+                                { icon: <Mail size={20} />, href: "https://mail.google.com/mail/?view=cm&to=codewithnishant1@gmail.com" },
                             ].map((social, i) => (
                                 <a
                                     key={i}
                                     href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     style={{
                                         width: "40px",
                                         height: "40px",
@@ -123,7 +126,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", padding: "2rem 0", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
                     <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem" }}>
-                        © {new Date().getFullYear()} Code With Nishant AI Labs. All rights reserved.
+                        © {new Date().getFullYear()} Code With Nishant. All rights reserved.
                     </div>
                     <div style={{ display: "flex", gap: "1.5rem" }}>
                         {["Privacy Policy", "Terms of Service"].map(link => (

@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Code With Nishant AI Labs | AI-Powered Growth Systems",
+  title: "Code With Nishant | AI Solutions",
   description:
     "We build intelligent automation, voice AI agents, and AI-driven digital systems that scale your business. From idea to intelligent execution.",
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Code With Nishant",
   ],
   openGraph: {
-    title: "Code With Nishant AI Labs | AI-Powered Growth Systems",
+    title: "Code With Nishant | AI Solutions",
     description:
       "We build intelligent automation, voice AI agents, and AI-driven digital systems that scale your business.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Code With Nishant AI Labs",
+    title: "Code With Nishant | AI Solutions",
     description: "AI-Powered Growth Systems For Smarter Businesses",
   },
   robots: {
