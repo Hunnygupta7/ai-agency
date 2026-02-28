@@ -8,6 +8,39 @@ interface Message {
     content: string;
 }
 
+function formatMessage(text: string): string {
+    let html = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+    // Bold: **text**
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+
+    // Italic: *text*
+    html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+    // Underline: __text__
+    html = html.replace(/__(.+?)__/g, '<u>$1</u>');
+
+    // URLs: https://... or http://...
+    html = html.replace(
+        /(https?:\/\/[^\s<]+)/g,
+        '<a href="$1" target="_blank" rel="noopener noreferrer" style="color: #22C55E; text-decoration: underline;">$1</a>'
+    );
+
+    // Email addresses
+    html = html.replace(
+        /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
+        '<a href="mailto:$1" style="color: #22C55E; text-decoration: underline;">$1</a>'
+    );
+
+    // Line breaks
+    html = html.replace(/\n/g, '<br />');
+
+    return html;
+}
+
 export default function ChatBot() {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
@@ -223,7 +256,11 @@ export default function ChatBot() {
                                         fontWeight: msg.role === "user" ? 600 : 400,
                                     }}
                                 >
-                                    {msg.content}
+                                    {msg.role === "assistant" ? (
+                                        <span dangerouslySetInnerHTML={{ __html: formatMessage(msg.content) }} />
+                                    ) : (
+                                        msg.content
+                                    )}
                                 </div>
                                 {msg.role === "user" && (
                                     <div
