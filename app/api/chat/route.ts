@@ -25,6 +25,47 @@ RULES:
 - Do not use markdown formatting, emojis, or bullet points. Keep it plain text.
 - Sound human, not robotic. Write like a helpful team member, not a corporate FAQ.`;
 
+const MODELS = [
+    "nvidia/nemotron-nano-9b-v2:free",
+    "qwen/qwen3-4b:free",
+    "meta-llama/llama-3.2-3b-instruct:free",
+    "google/gemma-3-4b-it:free",
+];
+
+async function tryModel(apiKey: string, model: string, messages: { role: string; content: string }[]) {
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://codewithnishant.vercel.app",
+            "X-Title": "Code With Nishant AI Assistant",
+        },
+        body: JSON.stringify({
+            model,
+            messages: [
+                { role: "system", content: SYSTEM_PROMPT },
+                ...messages,
+            ],
+            max_tokens: 300,
+            temperature: 0.7,
+        }),
+    });
+
+    const data = await response.json();
+
+    if (data.error) {
+        throw new Error(data.error.message || JSON.stringify(data.error));
+    }
+
+    const reply = data.choices?.[0]?.message?.content;
+    if (!reply || reply.trim().length < 5) {
+        throw new Error("Empty or too short response");
+    }
+
+    return reply;
+}
+
 export async function POST(req: NextRequest) {
     try {
         const { messages } = await req.json();
@@ -37,37 +78,22 @@ export async function POST(req: NextRequest) {
             );
         }
 
-        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${apiKey}`,
-                "Content-Type": "application/json",
-                "HTTP-Referer": "https://codewithnishant.vercel.app",
-                "X-Title": "Code With Nishant AI Assistant",
-            },
-            body: JSON.stringify({
-                model: "nvidia/nemotron-nano-9b-v2:free",
-                messages: [
-                    { role: "system", content: SYSTEM_PROMPT },
-                    ...messages,
-                ],
-                max_tokens: 300,
-                temperature: 0.7,
-            }),
-        });
-
-        const data = await response.json();
-
-        if (data.error) {
-            console.error("OpenRouter error:", data.error);
-            return NextResponse.json(
-                { error: "Failed to get response", details: data.error.message || data.error },
-                { status: 500 }
-            );
+        // Try each model in order until one works
+        for (const model of MODELS) {
+            try {
+                const reply = await tryModel(apiKey, model, messages);
+                return NextResponse.json({ message: reply });
+            } catch (err) {
+                console.log(`Model ${model} failed: ${err instanceof Error ? err.message : err}`);
+                continue;
+            }
         }
 
-        const reply = data.choices?.[0]?.message?.content || "Sorry, I could not generate a response.";
-        return NextResponse.json({ message: reply });
+        // All models failed
+        return NextResponse.json(
+            { error: "All models are temporarily unavailable. Please try again in a moment." },
+            { status: 503 }
+        );
     } catch (error: unknown) {
         const errMsg = error instanceof Error ? error.message : "Unknown error";
         console.error("Chat API error:", errMsg);
