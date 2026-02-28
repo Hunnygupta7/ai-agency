@@ -10,10 +10,18 @@ export async function POST(req: Request) {
         }
 
         // Google Sheets setup
+        // Handle private key: Vercel may store it with literal \n or actual newlines
+        const rawKey = process.env.GOOGLE_PRIVATE_KEY || '';
+        const privateKey = rawKey.includes('\\n') ? rawKey.replace(/\\n/g, '\n') : rawKey;
+
+        console.log('Lead API called. Email:', email);
+        console.log('Private key starts with:', privateKey.substring(0, 30));
+        console.log('Sheet ID:', process.env.GOOGLE_SHEET_ID);
+
         const auth = new google.auth.GoogleAuth({
             credentials: {
                 client_email: process.env.GOOGLE_CLIENT_EMAIL,
-                private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+                private_key: privateKey,
             },
             scopes: [
                 'https://www.googleapis.com/auth/drive',
