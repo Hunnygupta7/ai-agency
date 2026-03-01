@@ -51,7 +51,7 @@ export async function POST(req: Request) {
                     name || '',
                     email,
                     businessName || '',
-                    phone || '',
+                    phone ? `'${phone}` : '',
                     website || '',
                     problem || '',
                     status || ''
