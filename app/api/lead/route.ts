@@ -43,15 +43,15 @@ export async function POST(req: Request) {
 
         const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID,
-            range: 'Sheet1!A:H', // Columns A(Date), B(Name), C(Email), D(Phone), E(Business), F(Website), G(Problem), H(Budget/Status)
+            range: 'Sheet1!A:H', // Columns A(Date), B(Name), C(Email), D(Business), E(Phone), F(Website), G(Problem), H(Budget/Status)
             valueInputOption: 'USER_ENTERED',
             requestBody: {
                 values: [[
                     new Date().toISOString(),
                     name || '',
                     email,
-                    phone || '',
                     businessName || '',
+                    phone || '',
                     website || '',
                     problem || '',
                     status || ''
